@@ -1,0 +1,32 @@
+﻿@page
+@model FIrstWebApp.Pages.SuppliersModel
+@{
+}
+
+<p>Current day: @Model.Weekday</p>
+
+<h1>All suppliers</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>City</th>
+            <th>Id</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var supplier in Model.Suppliers)
+        {
+            <tr>
+                <td>@supplier.Name</td>
+                <td>@supplier.City</td>
+                <td>
+                    <a asp-page="/Supplier" asp-route-supplierId="@supplier.Id">EDIT</a>
+                </td>
+            </tr>
+        }       
+    </tbody>
+</table>
+
+
