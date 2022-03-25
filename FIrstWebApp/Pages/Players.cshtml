@@ -1,0 +1,18 @@
+﻿@page
+@model FIrstWebApp.Pages.PlayersModel
+@{
+}
+
+<h1>List of all players</h1>
+
+<ul>
+    @foreach(var playerName in Model.Players)
+    {
+        <li>@playerName</li>
+    }
+</ul>
+
+<hr />
+<button type="button">
+    <a asp-page="/RandomNumber">To Randon number</a>
+</button>

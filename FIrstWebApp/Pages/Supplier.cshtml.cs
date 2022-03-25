@@ -20,12 +20,20 @@ namespace FIrstWebApp.Pages
         }
         public void OnGet(int supplierId)
         {
-            var supplier = _context.Suppliers.First(e => e.SupplierId == supplierId);
-            CompanyName = supplier.CompanyName;
-            ContactName = supplier.ContactName;
-            ContactTitle = supplier.ContactTitle;
-            Address = supplier.Address;
-            City = supplier.City;
+            var supplier = _context.Suppliers.FirstOrDefault(e => e.SupplierId == supplierId);
+            if (supplier == null)
+            {
+                NotFound("Not found");
+            }
+            else
+            {
+                CompanyName = supplier.CompanyName;
+                ContactName = supplier.ContactName;
+                ContactTitle = supplier.ContactTitle;
+                Address = supplier.Address;
+                City = supplier.City;
+            }
+            
         }
     }
 }

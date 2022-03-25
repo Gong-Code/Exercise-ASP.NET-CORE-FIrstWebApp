@@ -1,0 +1,29 @@
+﻿@page
+@model FIrstWebApp.Pages.RandomNumberModel
+@{
+}
+
+@if (Model.RandomNum > 200000)
+{
+    <p>Current number @Model.RandomNum</p>
+    <h3>Stort nummer</h3>
+
+}
+else if (Model.RandomNum > 100000)
+{
+    <p>Current number @Model.RandomNum</p> 
+    <h3>Ganska Stort nummer</h3>
+
+}
+else{
+    <p>Current number @Model.RandomNum</p>
+    <h3>litet nummer</h3>
+}
+
+<p>The current time is @Model.CurrentTime</p>
+
+
+<hr />
+<button type="button">
+    <a asp-page="/Players">To players</a>
+</button>

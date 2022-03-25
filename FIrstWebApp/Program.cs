@@ -1,4 +1,5 @@
 using FIrstWebApp.Models;
+using FIrstWebApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 
 builder.Services.AddDbContext<NorthwindContext>();
+
+builder.Services.AddTransient<IKrisInfoService, KrisInfoService>();
 
 var app = builder.Build();
 

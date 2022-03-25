@@ -1,0 +1,15 @@
+﻿@page
+@model FIrstWebApp.Pages.krisinfolistaModel
+@{
+}
+
+<ul>
+@foreach(var item in Model.Items)
+{
+    <li>
+       <a asp-page="/KrisInfoArticle" asp-route-articleId="@item.Id">
+            @item.Title
+       </a>
+    </li>
+}
+</ul>

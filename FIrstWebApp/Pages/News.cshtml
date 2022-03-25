@@ -1,0 +1,13 @@
+﻿@page
+@model FIrstWebApp.Pages.NewsModel
+@{
+}
+
+<h1>Articles</h1>
+
+@foreach (var article in Model.News)
+{
+    <h3>@article.Title</h3>
+    <h3>@article.Description</h3>
+
+}
